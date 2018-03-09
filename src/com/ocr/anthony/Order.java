@@ -33,7 +33,7 @@ public class Order {
                 System.out.println("Vous avez choisi comme menu : végétarien");
                 break;
             default:
-                System.out.println("Vous n'avez pas choisi un des choix proposés comme menu");
+                System.out.println("Vous n'avez pas choisi de menu parmi les choix proposés");
                 break;
         }
     }
@@ -61,7 +61,7 @@ public class Order {
      * Run asking process for several menus.
      */
     public void runMenus() {
-        System.out.println("Combien souhaitez vous commander de menu ?");
+        System.out.println("Combien de menus souhaitez-vous commander ?");
         int menuQuantity = -1;
         boolean responseIsGood;
         do {
@@ -70,11 +70,11 @@ public class Order {
                 responseIsGood = true;
             } catch (InputMismatchException e) {
                 sc.next();
-                System.out.println("Vous n'avez pas choisi un nombre de menu valide");
+                System.out.println("Vous devez saisir un nombre, correspondant au nombre de menus souhaités");
                 responseIsGood = false;
             }
         } while (!responseIsGood);
-        orderSummary = "Résumé de votre commande:%n";
+        orderSummary = "Résumé de votre commande :%n";
         for (int i = 0; i < menuQuantity; i++) {
             orderSummary += "Menu " + (i + 1) + ":%n";
             runMenu();
@@ -102,7 +102,7 @@ public class Order {
                     System.out.println("Vous avez choisi comme accompagnement : riz");
                     break;
                 default:
-                    System.out.println("Vous n'avez pas choisi un des choix proposés comme accompagnement");
+                    System.out.println("Vous n'avez pas choisi d'accompagnement parmi les choix proposés");
                     break;
             }
         } else {
@@ -114,7 +114,7 @@ public class Order {
                     System.out.println("Vous avez choisi comme accompagnement : pas de riz");
                     break;
                 default:
-                    System.out.println("Vous n'avez pas choisi un des choix proposés comme accompagnement");
+                    System.out.println("Vous n'avez pas choisi d'accompagnement parmi les choix proposés");
                     break;
             }
         }
@@ -135,7 +135,7 @@ public class Order {
                 System.out.println("Vous avez choisi comme boisson : soda");
                 break;
             default:
-                System.out.println("Vous n'avez pas choisi un des choix proposés comme boisson");
+                System.out.println("Vous n'avez pas choisi de boisson parmi les choix proposés");
                 break;
         }
     }
@@ -179,7 +179,7 @@ public class Order {
         System.out.println("Choix " + category);
         for (int i = 1; i <= responses.length; i++)
             System.out.println(i + " - " + responses[i - 1]);
-        System.out.println("Que souhaitez-vous comme " + category + "?");
+        System.out.println("Que souhaitez-vous comme " + category + " ?");
         int nbResponse = -1;
         boolean responseIsGood;
         do {
@@ -195,7 +195,7 @@ public class Order {
                 orderSummary += choice + "%n";
                 System.out.println(choice);
             } else
-                System.out.println("Vous n'avez pas choisi un des choix proposés comme " + category);
+                System.out.println("Vous n'avez pas choisi de " + category + " parmi les choix proposés");
         } while (!responseIsGood);
         return nbResponse;
     }
