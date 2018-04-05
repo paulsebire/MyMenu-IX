@@ -74,7 +74,7 @@ public class Order {
                 responseIsGood = false;
             }
         } while (!responseIsGood);
-        orderSummary = "Résumé de votre commande:%n";
+        orderSummary = "Résumé de votre commande :%n";
         for (int i = 0; i < menuQuantity; i++) {
             orderSummary += "Menu " + (i + 1) + ":%n";
             runMenu();
